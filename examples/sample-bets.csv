@@ -1,0 +1,4 @@
+book,sport,event_id,market,player,line,outcome,price,stake,placed_at
+bovada,baseball_mlb,11049,batter_total_bases,Cal Raleigh,1.5,Over,130,100,2026-04-25T18:00:00Z
+bovada,baseball_mlb,11049,batter_doubles,Alec Burleson,0.5,Under,-550,50,2026-04-25T18:30:00Z
+bovada,baseball_mlb,11049,h2h,,,Seattle Mariners,-115,200,2026-04-25T17:45:00Z
