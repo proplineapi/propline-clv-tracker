@@ -9,11 +9,15 @@ jobs:
   typecheck:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5  # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020  # v4
         with:
           node-version: "20"
           cache: "npm"
       - run: npm ci
+      # Fail PR/main on any direct or transitive dep with a known
+      # high/critical CVE. Pairs with Dependabot cooldown (waits 7d
+      # before opening update PRs).
+      - run: npm audit --audit-level=high
       - run: npm run typecheck
       - run: npm run build
