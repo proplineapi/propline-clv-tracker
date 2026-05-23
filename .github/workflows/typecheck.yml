@@ -14,7 +14,13 @@ jobs:
         with:
           node-version: "20"
           cache: "npm"
-      - run: npm ci
+      # .npmrc sets min-release-age=7 as a supply-chain tripwire — but
+      # `propline` is our own first-party Node SDK and routinely
+      # publishes minutes before we want to consume it from CI. Override
+      # for the install step only; the global defense still applies
+      # everywhere else. `npm audit --audit-level=high` below is the
+      # actual control against compromised versions.
+      - run: npm ci --min-release-age=0
       # Fail PR/main on any direct or transitive dep with a known
       # high/critical CVE. Pairs with Dependabot cooldown (waits 7d
       # before opening update PRs).
