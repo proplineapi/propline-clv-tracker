@@ -13,7 +13,7 @@ git clone https://github.com/proplineapi/propline-clv-tracker
 cd propline-clv-tracker
 npm install
 
-export PROPLINE_API_KEY=...   # free key at https://prop-line.com (Pro tier needed
+export PROPLINE_API_KEY=...   # free key at https://prop-line.com/?ref=github (Pro tier needed
                               # for full snapshot data; Free tier returns redacted history)
 npm start -- examples/sample-bets.csv
 ```
@@ -88,6 +88,13 @@ A persistently positive stake-weighted CLV is the strongest evidence you're +EV;
 
 - `getOddsHistory` returns full snapshots on the **Pro tier** ($19/mo). Free tier gets a redacted response with snapshot counts only — useful for sanity-checking that PropLine has the data, but not enough to compute CLV.
 - All grading on this tool is read-only against the PropLine API; no DB or storage of your bets.
+
+## Links
+
+- Endpoints this tool uses: [`/odds/history`](https://prop-line.com/docs?ref=github#odds-history) and [`/odds/closing`](https://prop-line.com/docs?ref=github#odds-closing) (opening + closing line per outcome)
+- [Pinnacle closing odds API](https://prop-line.com/pinnacle-closing-odds-api?ref=github) — the sharp reference line for CLV
+- [Historical backfill](https://prop-line.com/historical-backfill?ref=github) — one-time full-archive export for backtests
+- [More recipes](https://prop-line.com/recipes?ref=github) · [Pricing](https://prop-line.com/pricing?ref=github) · [Node SDK](https://www.npmjs.com/package/propline)
 
 ## License
 
