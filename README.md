@@ -91,6 +91,7 @@ A persistently positive stake-weighted CLV is the strongest evidence you're +EV;
 
 ## Links
 
+- **Player props API** (markets, books, sports covered): [prop-line.com/player-props-api](https://prop-line.com/player-props-api?ref=github)
 - Endpoints this tool uses: [`/odds/history`](https://prop-line.com/docs?ref=github#odds-history) and [`/odds/closing`](https://prop-line.com/docs?ref=github#odds-closing) (opening + closing line per outcome)
 - [Pinnacle closing odds API](https://prop-line.com/pinnacle-closing-odds-api?ref=github) — the sharp reference line for CLV
 - [Historical backfill](https://prop-line.com/historical-backfill?ref=github) — one-time full-archive export for backtests
